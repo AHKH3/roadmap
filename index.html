@@ -3,67 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roadmap: Marketing Websites Freelancer</title>
+  <title>Roadmap: Marketing Websites Freelancer — The Continuous Journey</title>
   <meta
     name="description"
-    content="One service: fast, premium marketing websites for local businesses with local SEO, a WhatsApp button, and a booking form."
+    content="Continuous landscape progression roadmap for marketing websites freelancing: from web foundations to high-stakes client acquisition."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" /> <!-- impeccable-disable-line overused-font -- Sanctuary Editorial system font stack -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+  /> <!-- impeccable-disable-line overused-font -- Multi-paradigm design systems require distinct typographic voices per zone -->
 
   <link rel="stylesheet" href="styles/main.css" />
 </head>
-<body data-stage="phase-0-1">
+<body>
   <!-- Top 2px Global Progress Line -->
   <div class="top-progress-line" aria-hidden="true">
     <div id="top-progress-fill" class="top-progress-fill"></div>
   </div>
 
   <div class="page-shell">
-    <!-- System Header -->
-    <header class="system-header">
-      <div class="header-brand-block">
-        <span class="brand-code">AHKH STUDIO</span>
-        <span class="header-divider" aria-hidden="true">·</span>
-        <div id="live-chronos" class="chronos-pill" title="Roadmap Live Anchor">
-          <span class="chronos-dot"></span>
+    <!-- Top System HUD -->
+    <header class="system-hud">
+      <div class="hud-left">
+        <div class="brand-badge">
+          <span class="brand-code">AHKH STUDIO</span>
+          <span class="brand-label">Roadmap OS</span>
+        </div>
+
+        <div id="live-chronos" class="chronos-pill" title="Live Roadmap Calendar Anchor">
+          <span class="chronos-dot" aria-hidden="true"></span>
           <span id="chronos-date">Tue, 20 Oct 2026</span>
           <span class="chronos-sep" aria-hidden="true">·</span>
           <span class="chronos-cadence" id="chronos-cadence">Evening Focus</span>
         </div>
       </div>
 
-      <div class="header-actions">
-        <div class="global-metric-pill" title="Total Roadmap Completion">
+      <!-- Center Search & Filter Suite -->
+      <div class="hud-center">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="8.5" cy="8.5" r="5.5"></circle>
+            <path d="M12.5 12.5L16.5 16.5"></path>
+          </svg>
+          <input
+            type="search"
+            id="roadmap-search-input"
+            class="search-input"
+            placeholder="Search 394 lessons, drills, deliverables..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <span id="search-matches-count" class="search-matches" hidden>0 found</span>
+        </div>
+
+        <div class="filter-group" role="radiogroup" aria-label="Completion Filter">
+          <button type="button" class="filter-chip active" data-filter="all" aria-checked="true">
+            All <span id="count-filter-all">(394)</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="incomplete" aria-checked="false">
+            Incomplete <span id="count-filter-incomplete">(394)</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="completed" aria-checked="false">
+            Done <span id="count-filter-completed">(0)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right System Actions -->
+      <div class="hud-right">
+        <div class="global-metric-pill" title="Total Roadmap Completed">
           <span class="metric-label">Completed</span>
           <span id="global-stat-readout" class="metric-value"><strong>0</strong> / 394</span>
           <span id="global-stat-percent" class="metric-percent">(0%)</span>
         </div>
 
-        <button type="button" id="btn-milestones-drawer" class="control-btn" aria-expanded="false" title="Toggle Milestones & Foundation Strategy">
-          Milestones (0/6)
+        <button type="button" id="btn-toggle-overview" class="hud-btn" title="Toggle Bird's Eye Overview (Zoom Out)">
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="3" width="6" height="6" rx="1"></rect>
+            <rect x="11" y="3" width="6" height="6" rx="1"></rect>
+            <rect x="3" y="11" width="6" height="6" rx="1"></rect>
+            <rect x="11" y="11" width="6" height="6" rx="1"></rect>
+          </svg>
+          <span id="overview-label">Overview</span>
         </button>
 
-        <button type="button" id="btn-theme" class="control-btn" title="Toggle Light / Dark Theme">
+        <button type="button" id="btn-milestones-drawer" class="hud-btn" aria-expanded="false" title="Milestones & Foundational Strategy">
+          Milestones <span id="header-milestones-badge">(0/6)</span>
+        </button>
+
+        <button type="button" id="btn-theme" class="hud-btn" title="Toggle Light / Dark Mode">
           Theme
         </button>
       </div>
     </header>
 
-    <!-- Linear Stage Stepper Rail (Horizontal Stage Progression) -->
-    <nav class="linear-rail-container" aria-label="Roadmap Stages">
-      <div class="rail-header">
-        <span class="rail-title">Linear Progression Track</span>
-        <span class="rail-tip">Navigate with arrow keys or click to switch phase focus</span>
-      </div>
-      <div id="linear-stage-rail" class="linear-stage-rail">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </nav>
-
-    <!-- Collapsible Milestones & Foundation Panel -->
+    <!-- Collapsible Milestones & Strategy Drawer -->
     <section id="milestones-panel" class="milestones-drawer" hidden>
       <div class="drawer-inner">
         <div class="drawer-column">
@@ -83,22 +120,52 @@
       </div>
     </section>
 
-    <!-- Deep Stage Focus Arena (The Active Immersion Area) -->
-    <main id="stage-focus-arena" class="stage-focus-arena">
-      <!-- Dynamic Stage Hero, Filter Bar, Courses, Modules, Lessons, Drills, Capstone, and Traversal Footer -->
-    </main>
+    <!-- Continuous Landscape Viewport (The Horizontal World) -->
+    <div id="world-viewport" class="world-viewport" tabindex="0" aria-label="Roadmap Landscape Canvas">
+      <div id="world-canvas" class="world-canvas">
+        <!-- Continuous SVG World Spine Vector Conduit connecting all stages -->
+        <svg id="world-spine-svg" class="world-spine-svg" aria-hidden="true">
+          <path id="world-spine-base" class="world-spine-base" />
+          <path id="world-spine-active" class="world-spine-active" />
+        </svg>
 
-    <!-- System Footer -->
-    <footer class="system-footer">
-      <div class="footer-left">
-        <span class="footer-title">Roadmap: Marketing Websites Freelancer</span>
-        <span class="footer-sep">·</span>
-        <span class="footer-note">Single service · Zero AI shortcuts in fundamentals · Local-first</span>
+        <!-- World Zones & Transition Gates will be rendered dynamically by app.js -->
+        <div id="world-strip" class="world-strip"></div>
       </div>
-      <div class="footer-right">
-        <button type="button" id="btn-reset-data" class="footer-link-btn">Reset Stored Progress</button>
+    </div>
+
+    <!-- Bottom Panorama HUD (Continuous Map Navigation & Mini-Map Ribbon) -->
+    <nav class="panorama-hud" aria-label="Roadmap Panorama Navigator">
+      <div class="hud-nav-controls">
+        <button type="button" id="btn-prev-zone" class="nav-arrow-btn" title="Previous Zone (Left Arrow)">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 15L7 10L12 5"></path>
+          </svg>
+          <span>Prev</span>
+        </button>
       </div>
-    </footer>
+
+      <!-- The Panorama Mini-Map Track -->
+      <div class="minimap-container" id="minimap-container">
+        <div class="minimap-track" id="minimap-track">
+          <!-- Dynamically populated stage waypoints and progress bars -->
+        </div>
+        <!-- Draggable Viewport Lens Indicator -->
+        <div class="minimap-lens" id="minimap-lens" title="Current Viewport Position (Drag to scrub map)">
+          <span class="lens-glow"></span>
+        </div>
+      </div>
+
+      <div class="hud-nav-controls">
+        <button type="button" id="btn-next-zone" class="nav-arrow-btn" title="Next Zone (Right Arrow)">
+          <span>Next</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M8 5L13 10L8 15"></path>
+          </svg>
+        </button>
+        <button type="button" id="btn-reset-data" class="hud-reset-btn" title="Reset all checked items">Reset</button>
+      </div>
+    </nav>
   </div>
 
   <script src="data/roadmap-data.js"></script>
