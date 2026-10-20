@@ -20,3 +20,21 @@
   7. Track 7: The Deal Room (Financial Newsreader/tabular, banking vault emerald, treasury bank stamps)
   8. Track 8: Studio Command (Aerospace Geist, icy cyan, executive diamond-pin checkboxes)
 - **Impact**: Delivers an immersive, game-like world progression without game tropes or AI slop, fully compliant with Impeccable standards (0 detector warnings).
+
+
+## ADR-003: Horizontal Whiteboard Expedition with Tactile Sticky Notes & Physical Surfaces
+- **Date**: 2026-10-20
+- **Context**: The user clarified the desired interaction model: a real physical whiteboard/pinboard that scrolls horizontally, avoiding rigid card panels. Each stage features its own authentic physical board surface (chalkboard, blueprint mat, carbon workbench, cork pinboard, archival linen, industrial steel, banker's green felt, aerospace glass), and each course, book, and capstone is represented as a tactile Sticky Note pinned, taped, or clipped along an undulating winding expedition road.
+- **Decision**: Redesigned the entire canvas into an interactive horizontal Whiteboard Expedition:
+  1. Notes are staggered organically (`.stagger-high`, `.stagger-low`, `.stagger-center`, `.stagger-capstone`) with realistic rotational tilts (`-1.5deg`, `1.8deg`).
+  2. Each territory implements genuine physical stationery attachments:
+     - Phase 0-1: Amber industrial tape strips on dark chalkboard
+     - Phase 2: White drafting tape strips on blueprint cutting mat
+     - Phase 3: Neon mint electrical tape strips on carbon workbench
+     - Phase 4: Vivid magenta round push-pins on amethyst pinboard
+     - Phase 5: Vintage brass binder clips on ivory parchment & walnut
+     - Phase 6: Safety hazard orange magnetic rivets on industrial steel
+     - Track 7: Brass banker's paperclips on crisp prospectus ledger paper & green felt
+     - Track 8: Cyan diamond acrylic tacks on aerospace glassboard
+  3. Notes feature tactile completion checkboxes that stamp a green `MASTERED` watermark on the paper and dynamically illuminate the continuous winding SVG trail.
+  4. Tested with zero detector warnings (`impeccable detect` = 0).

@@ -1,18 +1,17 @@
 /* ==========================================================================
    ROADMAP: MARKETING WEBSITES FREELANCER
-   Landscape World Canvas & Multi-Paradigm Design Systems
+   Horizontal Whiteboard Expedition & Distinct Physical Territory Surfaces
    Strict Quality Floor: Zero Emojis · Zero Gradients · Zero AI Slop
    ========================================================================== */
 
 :root {
-  /* Global Foundation & System Shell */
   --font-geist: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
   --font-serif: 'Newsreader', Georgia, serif;
   --font-kinetic: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* HUD Shell Palette (Dark by default) */
+  /* HUD Shell Palette */
   --hud-bg: rgba(10, 12, 16, 0.94);
   --hud-border: rgba(255, 255, 255, 0.08);
   --hud-text-primary: #F4F4F5;
@@ -21,11 +20,9 @@
   --hud-surface: #14171F;
   --hud-surface-hover: #1C202B;
 
-  --world-bg: #07090C;
-  --spine-base-color: rgba(255, 255, 255, 0.08);
-  --spine-active-color: #10B981;
-
-  --transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+  --board-bg: #0B0E13;
+  --trail-base: rgba(255, 255, 255, 0.12);
+  --trail-active: #10B981;
 }
 
 html.light {
@@ -37,13 +34,13 @@ html.light {
   --hud-surface: #FFFFFF;
   --hud-surface-hover: #F4F1EA;
 
-  --world-bg: #F4F1EA;
-  --spine-base-color: rgba(0, 0, 0, 0.08);
-  --spine-active-color: #059669;
+  --board-bg: #F3EFE6;
+  --trail-base: rgba(0, 0, 0, 0.12);
+  --trail-active: #059669;
 }
 
 /* ==========================================================================
-   RESET & BASE STYLES
+   RESET & BASE
    ========================================================================== */
 
 *, *::before, *::after {
@@ -56,7 +53,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: var(--world-bg);
+  background-color: var(--board-bg);
   color: var(--hud-text-primary);
   font-family: var(--font-geist);
   font-size: 14px;
@@ -94,17 +91,7 @@ html, body {
   background: rgba(255, 255, 255, 0.28);
 }
 
-/* Page Shell (Fixed Vertical Viewport) */
-.page-shell {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
-/* 2px Global Progress Line */
+/* Top Progress Line */
 .top-progress-line {
   position: fixed;
   top: 0;
@@ -124,6 +111,16 @@ html, body {
   transform-origin: left;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
+}
+
+/* Page Shell */
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 /* ==========================================================================
@@ -365,7 +362,7 @@ html.light .filter-chip.active {
 }
 
 /* ==========================================================================
-   MILESTONES & STRATEGY DRAWER
+   STRATEGY DRAWER
    ========================================================================== */
 
 .milestones-drawer {
@@ -419,78 +416,30 @@ html.light .filter-chip.active {
   gap: 0.75rem;
 }
 
-.milestone-drawer-card {
-  padding: 0.75rem 1rem;
-  background: var(--hud-surface);
-  border: 1px solid var(--hud-border);
-  border-radius: 4px;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-
-.drawer-checkbox-btn {
-  background: transparent;
-  border: 1px solid var(--hud-border);
-  color: transparent;
-  width: 18px;
-  height: 18px;
-  border-radius: 3px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.drawer-checkbox-btn.checked {
-  background: #10B981;
-  border-color: #10B981;
-  color: #FFFFFF;
-}
-
-.drawer-checkbox-btn svg {
-  width: 12px;
-  height: 12px;
-}
-
-.milestone-drawer-title {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--hud-text-primary);
-  margin-bottom: 0.25rem;
-}
-
-.milestone-drawer-proof {
-  font-size: 0.75rem;
-  color: var(--hud-text-secondary);
-}
-
-.principle-card {
+.milestone-drawer-card, .principle-card {
   padding: 0.75rem 1rem;
   background: var(--hud-surface);
   border: 1px solid var(--hud-border);
   border-radius: 4px;
 }
 
-.principle-title {
+.milestone-drawer-title, .principle-title {
   font-size: 0.8125rem;
   font-weight: 600;
   color: #38BDF8;
   margin-bottom: 0.25rem;
 }
 
-.principle-desc {
+.milestone-drawer-proof, .principle-desc {
   font-size: 0.75rem;
   color: var(--hud-text-secondary);
 }
 
 /* ==========================================================================
-   CONTINUOUS LANDSCAPE VIEWPORT & CANVAS
+   HORIZONTAL WHITEBOARD VIEWPORT & CANVAS
    ========================================================================== */
 
-.world-viewport {
+.whiteboard-viewport {
   flex: 1;
   width: 100vw;
   height: calc(100vh - 120px);
@@ -503,12 +452,12 @@ html.light .filter-chip.active {
   user-select: none;
 }
 
-.world-viewport.is-dragging {
+.whiteboard-viewport.is-dragging {
   cursor: grabbing;
   scroll-behavior: auto;
 }
 
-.world-canvas {
+.whiteboard-canvas {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -521,13 +470,13 @@ html.light .filter-chip.active {
 }
 
 /* Overview Mode (Bird's Eye Zoom) */
-.world-canvas.overview-mode {
-  transform: scale(0.32);
+.whiteboard-canvas.overview-mode {
+  transform: scale(0.28);
   transform-origin: top left;
 }
 
-/* Dynamic SVG World Spine Vector Conduit */
-.world-spine-svg {
+/* SVG Connecting Expedition Trail */
+.trail-svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -537,22 +486,24 @@ html.light .filter-chip.active {
   z-index: 1;
 }
 
-.world-spine-base {
+.trail-base-path {
   fill: none;
-  stroke: var(--spine-base-color);
-  stroke-width: 3;
-  stroke-dasharray: 6 6;
+  stroke: var(--trail-base);
+  stroke-width: 3.5;
+  stroke-dasharray: 8 6;
+  stroke-linecap: round;
 }
 
-.world-spine-active {
+.trail-active-path {
   fill: none;
-  stroke: var(--spine-active-color);
-  stroke-width: 3;
+  stroke: var(--trail-active);
+  stroke-width: 4;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.4s ease;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
 }
 
-.world-strip {
+.whiteboard-strip {
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -564,7 +515,7 @@ html.light .filter-chip.active {
 }
 
 /* ==========================================================================
-   START MONUMENT & FINISH APEX
+   START & FINISH MONUMENTS
    ========================================================================== */
 
 .origin-monument, .apex-monument {
@@ -573,12 +524,13 @@ html.light .filter-chip.active {
   justify-content: center;
   align-items: center;
   padding: 2rem 2.5rem;
-  width: 320px;
+  width: 340px;
   flex-shrink: 0;
   height: 100%;
   box-sizing: border-box;
   text-align: center;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px dashed rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .origin-tag, .apex-tag {
@@ -644,22 +596,21 @@ html.light .filter-chip.active {
 }
 
 /* ==========================================================================
-   ZONE TRANSITION GATES (Bridging the biomes)
+   TRANSITION WAYPOINT GATES
    ========================================================================== */
 
-.zone-transition-gate {
+.waypoint-gate {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 180px;
+  width: 160px;
   padding: 2rem 1rem;
   flex-shrink: 0;
   height: 100%;
   box-sizing: border-box;
   position: relative;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.01);
+  border-right: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .gate-pylon {
@@ -670,32 +621,20 @@ html.light .filter-chip.active {
   text-align: center;
 }
 
-.gate-conduit-line {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
-}
-
 .gate-waypoint-ring {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.25);
   background: var(--hud-surface);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   color: var(--hud-text-primary);
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
-}
-
-.gate-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .gate-transfer-label {
@@ -708,102 +647,83 @@ html.light .filter-chip.active {
 
 .gate-dest-name {
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--hud-text-secondary);
 }
 
 /* ==========================================================================
-   BASE WORLD ZONE CONTAINER
+   TERRITORY WHITEBOARD SECTION & STAGGERED WINDING ROAD
    ========================================================================== */
 
-.world-zone {
+.board-territory {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
-  gap: 1.5rem;
-  padding: 1.25rem 2rem 1.5rem 2rem;
+  align-items: center;
+  gap: 2.25rem;
+  padding: 2rem 2.5rem;
   position: relative;
   height: 100%;
   box-sizing: border-box;
   flex-shrink: 0;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px dashed rgba(255, 255, 255, 0.12);
 }
 
-/* Zone Landmark (Prominent entrance monument) */
-.zone-landmark {
-  width: 320px;
+/* Territory Board Monument */
+.territory-sign {
+  width: 300px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  max-height: calc(100vh - 160px);
+  height: calc(100vh - 180px);
   padding: 1.5rem;
-  border-radius: 6px;
+  border-radius: 8px;
   box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.landmark-top {
+.sign-top {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.landmark-header-tag {
+.sign-phase-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.6875rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.landmark-title {
+.sign-title {
   font-size: 1.375rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.25;
 }
 
-.landmark-objective {
+.sign-objective {
   font-size: 0.8125rem;
   line-height: 1.55;
 }
 
-.landmark-capstone-card {
-  padding: 0.875rem 1rem;
-  border-radius: 4px;
-  margin-top: 0.5rem;
-}
-
-.capstone-tag {
-  font-size: 0.6875rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
-  display: block;
-}
-
-.capstone-text {
-  font-size: 0.8125rem;
-  line-height: 1.45;
-}
-
-.landmark-bottom {
+.sign-bottom {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding-top: 1rem;
-  border-top: 1px solid;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.landmark-stat-row {
+.sign-stat-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.75rem;
 }
 
-.landmark-progress-track {
+.sign-progress-track {
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -811,7 +731,7 @@ html.light .filter-chip.active {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.landmark-progress-fill {
+.sign-progress-fill {
   width: 100%;
   height: 100%;
   transform: scaleX(0);
@@ -820,1000 +740,749 @@ html.light .filter-chip.active {
   will-change: transform;
 }
 
-/* Zone Courses & Modules Stream */
-.zone-courses-stream {
+/* Sticky Notes Trail Container */
+.stickies-trail {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
-  gap: 1.25rem;
-  flex-shrink: 0;
+  align-items: center;
+  gap: 2.25rem;
   height: 100%;
+  flex-shrink: 0;
 }
 
-.course-cluster {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 1.25rem;
-  flex-shrink: 0;
-  height: 100%;
-}
+/* ==========================================================================
+   TACTILE STICKY NOTE CARDS (Physical Pinboard Items)
+   ========================================================================== */
 
-/* Zone Landmark Visual Artwork Container */
-.zone-visual-box {
-  margin-top: 1rem;
-  width: 100%;
+.sticky-note {
+  width: 320px;
+  min-height: 380px;
+  max-height: 480px;
+  padding: 1.5rem 1.25rem 1.25rem 1.25rem;
   border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-}
-
-.zone-artwork-svg {
-  width: 100%;
-  height: auto;
-  max-height: 180px;
-  display: block;
-}
-
-/* Module Station & Pillar Card (The Core Milestone Station) */
-.module-station, .pillar-card {
-  width: 380px;
-  flex-shrink: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  max-height: calc(100vh - 160px);
-  border-radius: 6px;
-  box-sizing: border-box;
-  overflow: hidden;
-  border: 1px solid;
+  position: relative;
   cursor: pointer;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s, opacity 0.15s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 12px 24px -4px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s, opacity 0.2s;
+  flex-shrink: 0;
 }
 
-.pillar-card:hover {
-  transform: translateY(-2px);
+/* Winding Stagger Patterns */
+.sticky-note.stagger-high {
+  align-self: flex-start;
+  margin-top: 2rem;
+  transform: rotate(-1.5deg);
 }
 
-.pillar-card.is-completed {
-  opacity: 0.82;
+.sticky-note.stagger-low {
+  align-self: flex-end;
+  margin-bottom: 2.5rem;
+  transform: rotate(1.8deg);
 }
 
-.pillar-card.is-completed:hover {
+.sticky-note.stagger-center {
+  align-self: center;
+  transform: rotate(-0.8deg);
+}
+
+.sticky-note.stagger-capstone {
+  align-self: center;
+  transform: rotate(1.2deg);
+  width: 340px;
+}
+
+.sticky-note:hover {
+  transform: translateY(-8px) scale(1.02) rotate(0deg) !important;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.6), 0 20px 36px -4px rgba(0, 0, 0, 0.5) !important;
+  z-index: 10;
+}
+
+.sticky-note.is-completed {
+  opacity: 0.85;
+}
+
+.sticky-note.is-completed:hover {
   opacity: 1;
 }
 
-.module-station-header {
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid;
-  flex-shrink: 0;
+/* Tactile Tape & Pin Pseudo Elements */
+.sticky-attachment {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Tape Strip Style */
+.attachment-tape {
+  width: 80px;
+  height: 22px;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Push Pin Style */
+.attachment-pin {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  top: -7px;
+}
+
+/* Binder Clip Style */
+.attachment-clip {
+  width: 36px;
+  height: 14px;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Sticky Note Header */
+.sticky-header {
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.module-station-course-meta {
-  font-size: 0.6875rem;
-  letter-spacing: 0.04em;
+.sticky-type-stamp {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
-.module-station-title {
-  font-size: 0.9375rem;
-  font-weight: 600;
+.sticky-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
   line-height: 1.3;
 }
 
-.module-lessons-scroll {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 1rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+.sticky-author {
+  font-size: 0.75rem;
+  opacity: 0.75;
 }
 
-.pillar-highlights-box {
+/* Sticky Body Bullet Points */
+.sticky-body {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.875rem;
 }
 
-.highlights-heading {
-  font-size: 0.6875rem;
-  font-family: var(--font-mono);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--hud-text-faint);
-}
-
-.pillar-bullet-list {
+.sticky-bullets {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
-.pillar-bullet-list li {
+.sticky-bullets li {
   position: relative;
-  padding-left: 1rem;
+  padding-left: 0.9rem;
   font-size: 0.8125rem;
-  line-height: 1.5;
-  color: var(--hud-text-secondary);
+  line-height: 1.45;
 }
 
-.pillar-bullet-list li::before {
+.sticky-bullets li::before {
   content: '·';
   position: absolute;
-  left: 0.2rem;
+  left: 0.15rem;
   font-size: 1.25rem;
   line-height: 1;
-  color: var(--hud-text-faint);
 }
 
-.pillar-deliverable-badge {
-  padding: 0.625rem 0.875rem;
+/* Deliverable Badge */
+.sticky-deliverable {
+  padding: 0.5rem 0.65rem;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  margin-bottom: 1.25rem;
+  gap: 0.2rem;
+  margin-top: auto;
+  margin-bottom: 0.75rem;
 }
 
-.deliverable-tag {
-  font-size: 0.625rem;
+.deliverable-label {
   font-family: var(--font-mono);
+  font-size: 0.625rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #10B981;
 }
 
-.deliverable-title {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--hud-text-primary);
-  line-height: 1.4;
-}
-
-.pillar-action-row {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: auto;
-}
-
-.action-label {
+.deliverable-desc {
   font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--hud-text-secondary);
+  font-weight: 600;
+  line-height: 1.35;
 }
 
-.pillar-card.is-completed .action-label {
-  color: #10B981;
-}
-
-/* ==========================================================================
-   ZONE 1: THE TERMINAL FOUNDRY [data-zone="phase-0-1"]
-   Design System: Monolithic Monospace Terminal & Phosphor Amber CRT
-   ========================================================================== */
-
-.world-zone[data-zone="phase-0-1"] {
-  background: #0A0D0E;
-  font-family: var(--font-mono);
-  color: #F59E0B;
-}
-
-.world-zone[data-zone="phase-0-1"] .zone-landmark {
-  background: #0E1214;
-  border: 1px solid rgba(245, 158, 11, 0.28);
-  color: #F59E0B;
-}
-
-.world-zone[data-zone="phase-0-1"] .landmark-header-tag {
-  color: #B45309;
-}
-
-.world-zone[data-zone="phase-0-1"] .landmark-title {
-  color: #FEF3C7;
-  font-family: var(--font-mono);
-  letter-spacing: -0.02em;
-}
-
-.world-zone[data-zone="phase-0-1"] .landmark-objective {
-  color: #D97706;
-}
-
-.world-zone[data-zone="phase-0-1"] .landmark-capstone-card {
-  background: #141A1D;
-  border: 1px solid rgba(245, 158, 11, 0.2);
-}
-
-.world-zone[data-zone="phase-0-1"] .capstone-tag {
-  color: #F59E0B;
-}
-
-.world-zone[data-zone="phase-0-1"] .capstone-text {
-  color: #FDE68A;
-}
-
-.world-zone[data-zone="phase-0-1"] .landmark-bottom {
-  border-color: rgba(245, 158, 11, 0.2);
-}
-
-.world-zone[data-zone="phase-0-1"] .landmark-progress-fill {
-  background: #F59E0B;
-}
-
-.world-zone[data-zone="phase-0-1"] .module-station {
-  background: #0D1113;
-  border-color: rgba(245, 158, 11, 0.22);
-}
-
-.world-zone[data-zone="phase-0-1"] .module-station-header {
-  background: #111619;
-  border-color: rgba(245, 158, 11, 0.18);
-}
-
-.world-zone[data-zone="phase-0-1"] .module-station-title {
-  color: #FEF3C7;
-  font-family: var(--font-mono);
-}
-
-.world-zone[data-zone="phase-0-1"] .lesson-card {
-  background: #0F1417;
-  border-color: rgba(245, 158, 11, 0.16);
-  color: #FEF3C7;
-}
-
-.world-zone[data-zone="phase-0-1"] .lesson-card:hover {
-  border-color: rgba(245, 158, 11, 0.45);
-  background: #141B1F;
-}
-
-/* Zone 1 Checkbox: Monospace bracket toggle [ ] / [✓] */
-.world-zone[data-zone="phase-0-1"] .checkbox-btn {
-  background: #0A0D0E;
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  color: #F59E0B;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  cursor: pointer;
+/* Sticky Action Row & Checkbox */
+.sticky-action-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  transition: background 0.15s, border-color 0.15s;
+  gap: 0.625rem;
+  padding-top: 0.625rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.2);
 }
 
-.world-zone[data-zone="phase-0-1"] .checkbox-btn.is-checked {
-  background: #F59E0B;
-  color: #0A0D0E;
-}
-
-/* ==========================================================================
-   ZONE 2: THE VECTOR STUDIO [data-zone="phase-2"]
-   Design System: Figma Architectural Blueprint & Coordinate Grid
-   ========================================================================== */
-
-.world-zone[data-zone="phase-2"] {
-  background: #07101E;
-  background-image: radial-gradient(circle, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
-  background-size: 16px 16px;
-  font-family: var(--font-inter);
-  color: #E0F2FE;
-}
-
-.world-zone[data-zone="phase-2"] .zone-landmark {
-  background: #0C1A30;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: #E0F2FE;
-}
-
-.world-zone[data-zone="phase-2"] .landmark-header-tag {
-  color: #38BDF8;
-  font-family: var(--font-mono);
-}
-
-.world-zone[data-zone="phase-2"] .landmark-title {
-  color: #FFFFFF;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.world-zone[data-zone="phase-2"] .landmark-objective {
-  color: #BAE6FD;
-}
-
-.world-zone[data-zone="phase-2"] .landmark-capstone-card {
-  background: #112442;
-  border: 1px solid rgba(56, 189, 248, 0.22);
-}
-
-.world-zone[data-zone="phase-2"] .capstone-tag {
-  color: #38BDF8;
-  font-family: var(--font-mono);
-}
-
-.world-zone[data-zone="phase-2"] .capstone-text {
-  color: #E0F2FE;
-}
-
-.world-zone[data-zone="phase-2"] .landmark-bottom {
-  border-color: rgba(56, 189, 248, 0.2);
-}
-
-.world-zone[data-zone="phase-2"] .landmark-progress-fill {
-  background: #38BDF8;
-}
-
-.world-zone[data-zone="phase-2"] .module-station {
-  background: #0A162A;
-  border-color: rgba(56, 189, 248, 0.25);
-}
-
-.world-zone[data-zone="phase-2"] .module-station-header {
-  background: #0E1E38;
-  border-color: rgba(56, 189, 248, 0.2);
-}
-
-.world-zone[data-zone="phase-2"] .module-station-title {
-  color: #FFFFFF;
-}
-
-.world-zone[data-zone="phase-2"] .lesson-card {
-  background: #0D1C34;
-  border-color: rgba(56, 189, 248, 0.18);
-  color: #E0F2FE;
-}
-
-.world-zone[data-zone="phase-2"] .lesson-card:hover {
-  border-color: rgba(56, 189, 248, 0.5);
-  background: #132747;
-}
-
-/* Zone 2 Checkbox: Vector Anchor Point node with anchor handles */
-.world-zone[data-zone="phase-2"] .checkbox-btn {
-  background: #07101E;
-  border: 1px solid rgba(56, 189, 248, 0.5);
-  color: #38BDF8;
-  width: 18px;
-  height: 18px;
+.sticky-checkbox-btn {
+  width: 20px;
+  height: 20px;
   border-radius: 3px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border: 1.5px solid;
+  background: transparent;
   transition: background 0.15s, border-color 0.15s;
 }
 
-.world-zone[data-zone="phase-2"] .checkbox-btn.is-checked {
-  background: #38BDF8;
-  border-color: #38BDF8;
-  color: #07101E;
-}
-
-/* ==========================================================================
-   ZONE 3: THE VELOCITY ENGINE [data-zone="phase-3"]
-   Design System: Compiler Speed & Laser Mint Component Matrix
-   ========================================================================== */
-
-.world-zone[data-zone="phase-3"] {
-  background: #070D0A;
-  font-family: var(--font-geist);
-  color: #D1FAE5;
-}
-
-.world-zone[data-zone="phase-3"] .zone-landmark {
-  background: #0B1611;
-  border: 1px solid rgba(16, 185, 129, 0.28);
-  color: #D1FAE5;
-}
-
-.world-zone[data-zone="phase-3"] .landmark-header-tag {
-  color: #10B981;
-  font-family: var(--font-mono);
-}
-
-.world-zone[data-zone="phase-3"] .landmark-title {
-  color: #FFFFFF;
-  letter-spacing: -0.02em;
-}
-
-.world-zone[data-zone="phase-3"] .landmark-objective {
-  color: #A7F3D0;
-}
-
-.world-zone[data-zone="phase-3"] .landmark-capstone-card {
-  background: #0E1F18;
-  border: 1px solid rgba(16, 185, 129, 0.22);
-}
-
-.world-zone[data-zone="phase-3"] .capstone-tag {
-  color: #10B981;
-}
-
-.world-zone[data-zone="phase-3"] .capstone-text {
-  color: #ECFDF5;
-}
-
-.world-zone[data-zone="phase-3"] .landmark-bottom {
-  border-color: rgba(16, 185, 129, 0.2);
-}
-
-.world-zone[data-zone="phase-3"] .landmark-progress-fill {
-  background: #10B981;
-}
-
-.world-zone[data-zone="phase-3"] .module-station {
-  background: #0A1410;
-  border-color: rgba(16, 185, 129, 0.22);
-}
-
-.world-zone[data-zone="phase-3"] .module-station-header {
-  background: #0E1C16;
-  border-color: rgba(16, 185, 129, 0.18);
-}
-
-.world-zone[data-zone="phase-3"] .module-station-title {
-  color: #FFFFFF;
-}
-
-.world-zone[data-zone="phase-3"] .lesson-card {
-  background: #0D1A14;
-  border-color: rgba(16, 185, 129, 0.16);
-  color: #ECFDF5;
-}
-
-.world-zone[data-zone="phase-3"] .lesson-card:hover {
-  border-color: rgba(16, 185, 129, 0.45);
-  background: #12241C;
-}
-
-/* Zone 3 Checkbox: Reactive compiler pill toggle */
-.world-zone[data-zone="phase-3"] .checkbox-btn {
-  background: #070D0A;
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #10B981;
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.15s, border-color 0.15s;
-}
-
-.world-zone[data-zone="phase-3"] .checkbox-btn.is-checked {
-  background: #10B981;
-  border-color: #10B981;
-  color: #070D0A;
-}
-
-/* ==========================================================================
-   ZONE 4: THE KINETIC LAB [data-zone="phase-4"]
-   Design System: Motion Staging, Amethyst Physics & Keyframe Tracks
-   ========================================================================== */
-
-.world-zone[data-zone="phase-4"] {
-  background: #0B0814;
-  font-family: var(--font-kinetic);
-  color: #F3E8FF;
-}
-
-.world-zone[data-zone="phase-4"] .zone-landmark {
-  background: #130E22;
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  color: #F3E8FF;
-}
-
-.world-zone[data-zone="phase-4"] .landmark-header-tag {
-  color: #C084FC;
-  font-family: var(--font-mono);
-}
-
-.world-zone[data-zone="phase-4"] .landmark-title {
-  color: #FFFFFF;
-  letter-spacing: -0.01em;
-}
-
-.world-zone[data-zone="phase-4"] .landmark-objective {
-  color: #E9D5FF;
-}
-
-.world-zone[data-zone="phase-4"] .landmark-capstone-card {
-  background: #1B1330;
-  border: 1px solid rgba(168, 85, 247, 0.22);
-}
-
-.world-zone[data-zone="phase-4"] .capstone-tag {
-  color: #C084FC;
-}
-
-.world-zone[data-zone="phase-4"] .capstone-text {
-  color: #FAF5FF;
-}
-
-.world-zone[data-zone="phase-4"] .landmark-bottom {
-  border-color: rgba(168, 85, 247, 0.2);
-}
-
-.world-zone[data-zone="phase-4"] .landmark-progress-fill {
-  background: #A855F7;
-}
-
-.world-zone[data-zone="phase-4"] .module-station {
-  background: #100C1C;
-  border-color: rgba(168, 85, 247, 0.22);
-}
-
-.world-zone[data-zone="phase-4"] .module-station-header {
-  background: #161026;
-  border-color: rgba(168, 85, 247, 0.18);
-}
-
-.world-zone[data-zone="phase-4"] .module-station-title {
-  color: #FFFFFF;
-}
-
-.world-zone[data-zone="phase-4"] .lesson-card {
-  background: #140E24;
-  border-color: rgba(168, 85, 247, 0.16);
-  color: #FAF5FF;
-}
-
-.world-zone[data-zone="phase-4"] .lesson-card:hover {
-  border-color: rgba(168, 85, 247, 0.45);
-  background: #1C1433;
-}
-
-/* Zone 4 Checkbox: Keyframe diamond that rotates 45 degrees */
-.world-zone[data-zone="phase-4"] .checkbox-btn {
-  background: #0B0814;
-  border: 1px solid rgba(168, 85, 247, 0.45);
-  color: #C084FC;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  transform: rotate(45deg);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.15s, border-color 0.15s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.world-zone[data-zone="phase-4"] .checkbox-btn svg {
-  transform: rotate(-45deg);
-}
-
-.world-zone[data-zone="phase-4"] .checkbox-btn.is-checked {
-  background: #A855F7;
-  border-color: #A855F7;
-  color: #0B0814;
-}
-
-/* ==========================================================================
-   ZONE 5: THE EDITORIAL ATELIER [data-zone="phase-5"]
-   Design System: Swiss Haute-Typographie, Newsreader Serif & Gold Leaf
-   ========================================================================== */
-
-.world-zone[data-zone="phase-5"] {
-  background: #120F0C;
-  font-family: var(--font-serif);
-  color: #F7F3E9;
-}
-
-.world-zone[data-zone="phase-5"] .zone-landmark {
-  background: #191410;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  color: #F7F3E9;
-}
-
-.world-zone[data-zone="phase-5"] .landmark-header-tag {
-  color: #D4AF37;
-  font-family: var(--font-mono);
-  letter-spacing: 0.12em;
-}
-
-.world-zone[data-zone="phase-5"] .landmark-title {
-  color: #FFFDF8;
-  font-style: italic;
-  font-weight: 500;
-}
-
-.world-zone[data-zone="phase-5"] .landmark-objective {
-  color: #E8DFD0;
-  font-family: var(--font-geist);
-}
-
-.world-zone[data-zone="phase-5"] .landmark-capstone-card {
-  background: #201A15;
-  border: 1px solid rgba(212, 175, 55, 0.22);
-}
-
-.world-zone[data-zone="phase-5"] .capstone-tag {
-  color: #D4AF37;
-  font-family: var(--font-mono);
-}
-
-.world-zone[data-zone="phase-5"] .capstone-text {
-  color: #FFFDF8;
-  font-family: var(--font-geist);
-}
-
-.world-zone[data-zone="phase-5"] .landmark-bottom {
-  border-color: rgba(212, 175, 55, 0.2);
-}
-
-.world-zone[data-zone="phase-5"] .landmark-progress-fill {
-  background: #D4AF37;
-}
-
-.world-zone[data-zone="phase-5"] .module-station {
-  background: #15110E;
-  border-color: rgba(212, 175, 55, 0.22);
-}
-
-.world-zone[data-zone="phase-5"] .module-station-header {
-  background: #1C1713;
-  border-color: rgba(212, 175, 55, 0.18);
-}
-
-.world-zone[data-zone="phase-5"] .module-station-title {
-  color: #FFFDF8;
-  font-style: italic;
-}
-
-.world-zone[data-zone="phase-5"] .lesson-card {
-  background: #1A1512;
-  border-color: rgba(212, 175, 55, 0.16);
-  color: #F7F3E9;
-  font-family: var(--font-geist);
-}
-
-.world-zone[data-zone="phase-5"] .lesson-card:hover {
-  border-color: rgba(212, 175, 55, 0.45);
-  background: #231C18;
-}
-
-/* Zone 5 Checkbox: Circular gold wax seal stamp */
-.world-zone[data-zone="phase-5"] .checkbox-btn {
-  background: #120F0C;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  color: #D4AF37;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.15s, border-color 0.15s;
-}
-
-.world-zone[data-zone="phase-5"] .checkbox-btn.is-checked {
-  background: #D4AF37;
-  border-color: #D4AF37;
-  color: #120F0C;
-}
-
-/* ==========================================================================
-   ZONE 6: THE TELEMETRY VAULT [data-zone="phase-6"]
-   Design System: Industrial Mainframe, Hazard Amber & Edge Telemetry
-   ========================================================================== */
-
-.world-zone[data-zone="phase-6"] {
-  background: #0B0E12;
-  font-family: var(--font-mono);
-  color: #FED7AA;
-}
-
-.world-zone[data-zone="phase-6"] .zone-landmark {
-  background: #0F141B;
-  border: 1px solid rgba(249, 115, 22, 0.28);
-  color: #FED7AA;
-}
-
-.world-zone[data-zone="phase-6"] .landmark-header-tag {
-  color: #F97316;
-}
-
-.world-zone[data-zone="phase-6"] .landmark-title {
-  color: #FFF7ED;
-  letter-spacing: -0.02em;
-}
-
-.world-zone[data-zone="phase-6"] .landmark-objective {
-  color: #FDBA74;
-}
-
-.world-zone[data-zone="phase-6"] .landmark-capstone-card {
-  background: #151D27;
-  border: 1px solid rgba(249, 115, 22, 0.2);
-}
-
-.world-zone[data-zone="phase-6"] .capstone-tag {
-  color: #F97316;
-}
-
-.world-zone[data-zone="phase-6"] .capstone-text {
-  color: #FFEDD5;
-}
-
-.world-zone[data-zone="phase-6"] .landmark-bottom {
-  border-color: rgba(249, 115, 22, 0.2);
-}
-
-.world-zone[data-zone="phase-6"] .landmark-progress-fill {
-  background: #F97316;
-}
-
-.world-zone[data-zone="phase-6"] .module-station {
-  background: #0D1218;
-  border-color: rgba(249, 115, 22, 0.22);
-}
-
-.world-zone[data-zone="phase-6"] .module-station-header {
-  background: #121922;
-  border-color: rgba(249, 115, 22, 0.18);
-}
-
-.world-zone[data-zone="phase-6"] .module-station-title {
-  color: #FFF7ED;
-}
-
-.world-zone[data-zone="phase-6"] .lesson-card {
-  background: #101720;
-  border-color: rgba(249, 115, 22, 0.16);
-  color: #FFF7ED;
-}
-
-.world-zone[data-zone="phase-6"] .lesson-card:hover {
-  border-color: rgba(249, 115, 22, 0.45);
-  background: #17212E;
-}
-
-/* Zone 6 Checkbox: Industrial rocker switch toggle */
-.world-zone[data-zone="phase-6"] .checkbox-btn {
-  background: #0B0E12;
-  border: 1px solid rgba(249, 115, 22, 0.4);
-  color: #F97316;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.15s, border-color 0.15s;
-}
-
-.world-zone[data-zone="phase-6"] .checkbox-btn.is-checked {
-  background: #F97316;
-  border-color: #F97316;
-  color: #0B0E12;
-}
-
-/* ==========================================================================
-   ZONE 7: THE DEAL ROOM [data-zone="marketing-sales"]
-   Design System: Wall Street Prospectus Ledger & Imperial Gold
-   ========================================================================== */
-
-.world-zone[data-zone="marketing-sales"] {
-  background: #06130E;
-  font-family: var(--font-geist);
-  color: #FEF08A;
-}
-
-.world-zone[data-zone="marketing-sales"] .zone-landmark {
-  background: #0A1C15;
-  border: 1px solid rgba(234, 179, 8, 0.3);
-  color: #FEF08A;
-}
-
-.world-zone[data-zone="marketing-sales"] .landmark-header-tag {
-  color: #EAB308;
-  font-family: var(--font-mono);
-}
-
-.world-zone[data-zone="marketing-sales"] .landmark-title {
-  color: #FEF9C3;
-  font-family: var(--font-serif);
+.sticky-action-text {
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
-.world-zone[data-zone="marketing-sales"] .landmark-objective {
-  color: #E2E8F0;
-}
-
-.world-zone[data-zone="marketing-sales"] .landmark-capstone-card {
-  background: #0F261D;
-  border: 1px solid rgba(234, 179, 8, 0.22);
-}
-
-.world-zone[data-zone="marketing-sales"] .capstone-tag {
-  color: #EAB308;
+/* Completed Ink Stamp Watermark */
+.completed-watermark {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 2px solid #10B981;
+  color: #10B981;
   font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
+  transform: rotate(8deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.world-zone[data-zone="marketing-sales"] .capstone-text {
-  color: #FEF9C3;
-}
-
-.world-zone[data-zone="marketing-sales"] .landmark-bottom {
-  border-color: rgba(234, 179, 8, 0.2);
-}
-
-.world-zone[data-zone="marketing-sales"] .landmark-progress-fill {
-  background: #EAB308;
-}
-
-.world-zone[data-zone="marketing-sales"] .module-station {
-  background: #081711;
-  border-color: rgba(234, 179, 8, 0.22);
-}
-
-.world-zone[data-zone="marketing-sales"] .module-station-header {
-  background: #0D2119;
-  border-color: rgba(234, 179, 8, 0.18);
-}
-
-.world-zone[data-zone="marketing-sales"] .module-station-title {
-  color: #FEF9C3;
-}
-
-.world-zone[data-zone="marketing-sales"] .lesson-card {
-  background: #0B1D16;
-  border-color: rgba(234, 179, 8, 0.16);
-  color: #FEF9C3;
-}
-
-.world-zone[data-zone="marketing-sales"] .lesson-card:hover {
-  border-color: rgba(234, 179, 8, 0.45);
-  background: #112920;
-}
-
-/* Zone 7 Checkbox: Bank treasury stamp checkbox */
-.world-zone[data-zone="marketing-sales"] .checkbox-btn {
-  background: #06130E;
-  border: 1px solid rgba(234, 179, 8, 0.45);
-  color: #EAB308;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.15s, border-color 0.15s;
-}
-
-.world-zone[data-zone="marketing-sales"] .checkbox-btn.is-checked {
-  background: #EAB308;
-  border-color: #EAB308;
-  color: #06130E;
+.sticky-note.is-completed .completed-watermark {
+  opacity: 1;
 }
 
 /* ==========================================================================
-   ZONE 8: STUDIO COMMAND [data-zone="studio-playbook"]
-   Design System: Executive Operating System & Aerospace Cyan
+   TERRITORY 1: THE HACKER WORKSHOP [data-territory="phase-0-1"]
+   Surface: Dark Chalkboard with Amber Phosphor Notes
    ========================================================================== */
 
-.world-zone[data-zone="studio-playbook"] {
-  background: #060911;
+.board-territory[data-territory="phase-0-1"] {
+  background: #111519;
+  background-image: radial-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: #FEF3C7;
+  font-family: var(--font-mono);
+}
+
+.board-territory[data-territory="phase-0-1"] .territory-sign {
+  background: #161C22;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #FDE68A;
+}
+
+.board-territory[data-territory="phase-0-1"] .sign-phase-tag {
+  color: #F59E0B;
+}
+
+.board-territory[data-territory="phase-0-1"] .sign-progress-fill {
+  background: #F59E0B;
+}
+
+.board-territory[data-territory="phase-0-1"] .sticky-note {
+  background: #1A1610;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #FEF3C7;
+}
+
+.board-territory[data-territory="phase-0-1"] .attachment-tape {
+  background: rgba(245, 158, 11, 0.55);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.board-territory[data-territory="phase-0-1"] .sticky-type-stamp {
+  color: #F59E0B;
+}
+
+.board-territory[data-territory="phase-0-1"] .sticky-deliverable {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.board-territory[data-territory="phase-0-1"] .deliverable-label {
+  color: #F59E0B;
+}
+
+.board-territory[data-territory="phase-0-1"] .sticky-checkbox-btn {
+  border-color: #F59E0B;
+  color: #0A0D0E;
+}
+
+.board-territory[data-territory="phase-0-1"] .sticky-checkbox-btn.is-checked {
+  background: #F59E0B;
+}
+
+/* ==========================================================================
+   TERRITORY 2: THE ARCHITECT DRAFTING MAT [data-territory="phase-2"]
+   Surface: Blueprint Cutting Mat with Azure Drafting Notes
+   ========================================================================== */
+
+.board-territory[data-territory="phase-2"] {
+  background: #081628;
+  color: #E0F2FE;
+  font-family: var(--font-inter);
+}
+
+.board-territory[data-territory="phase-2"] .territory-sign {
+  background: #0D223F;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #E0F2FE;
+}
+
+.board-territory[data-territory="phase-2"] .sign-phase-tag {
+  color: #38BDF8;
+  font-family: var(--font-mono);
+}
+
+.board-territory[data-territory="phase-2"] .sign-progress-fill {
+  background: #38BDF8;
+}
+
+.board-territory[data-territory="phase-2"] .sticky-note {
+  background: #0E2444;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  color: #E0F2FE;
+}
+
+.board-territory[data-territory="phase-2"] .attachment-tape {
+  background: rgba(255, 255, 255, 0.45);
+  transform: translateX(-50%) rotate(1.5deg);
+}
+
+.board-territory[data-territory="phase-2"] .sticky-type-stamp {
+  color: #38BDF8;
+  font-family: var(--font-mono);
+}
+
+.board-territory[data-territory="phase-2"] .sticky-deliverable {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.board-territory[data-territory="phase-2"] .deliverable-label {
+  color: #38BDF8;
+}
+
+.board-territory[data-territory="phase-2"] .sticky-checkbox-btn {
+  border-color: #38BDF8;
+  color: #09182C;
+}
+
+.board-territory[data-territory="phase-2"] .sticky-checkbox-btn.is-checked {
+  background: #38BDF8;
+}
+
+/* ==========================================================================
+   TERRITORY 3: THE VELOCITY ENGINE [data-territory="phase-3"]
+   Surface: Matte Carbon Workbench with Laser Mint Stickies
+   ========================================================================== */
+
+.board-territory[data-territory="phase-3"] {
+  background: #09110D;
+  background-image: radial-gradient(rgba(16, 185, 129, 0.12) 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: #ECFDF5;
   font-family: var(--font-geist);
-  color: #CFFAFE;
 }
 
-.world-zone[data-zone="studio-playbook"] .zone-landmark {
-  background: #0A101D;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  color: #CFFAFE;
+.board-territory[data-territory="phase-3"] .territory-sign {
+  background: #0C1E16;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #D1FAE5;
 }
 
-.world-zone[data-zone="studio-playbook"] .landmark-header-tag {
-  color: #06B6D4;
+.board-territory[data-territory="phase-3"] .sign-phase-tag {
+  color: #10B981;
   font-family: var(--font-mono);
 }
 
-.world-zone[data-zone="studio-playbook"] .landmark-title {
-  color: #FFFFFF;
-  letter-spacing: -0.02em;
+.board-territory[data-territory="phase-3"] .sign-progress-fill {
+  background: #10B981;
 }
 
-.world-zone[data-zone="studio-playbook"] .landmark-objective {
-  color: #A5F3FC;
+.board-territory[data-territory="phase-3"] .sticky-note {
+  background: #0D2218;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #ECFDF5;
 }
 
-.world-zone[data-zone="studio-playbook"] .landmark-capstone-card {
-  background: #0E182A;
-  border: 1px solid rgba(6, 182, 212, 0.22);
+.board-territory[data-territory="phase-3"] .attachment-tape {
+  background: rgba(16, 185, 129, 0.5);
+  transform: translateX(-50%) rotate(-1deg);
 }
 
-.world-zone[data-zone="studio-playbook"] .capstone-tag {
-  color: #06B6D4;
+.board-territory[data-territory="phase-3"] .sticky-type-stamp {
+  color: #10B981;
+}
+
+.board-territory[data-territory="phase-3"] .sticky-deliverable {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.board-territory[data-territory="phase-3"] .deliverable-label {
+  color: #10B981;
+}
+
+.board-territory[data-territory="phase-3"] .sticky-checkbox-btn {
+  border-color: #10B981;
+  color: #09110D;
+}
+
+.board-territory[data-territory="phase-3"] .sticky-checkbox-btn.is-checked {
+  background: #10B981;
+}
+
+/* ==========================================================================
+   TERRITORY 4: THE KINETIC PINBOARD [data-territory="phase-4"]
+   Surface: Cosmic Workshop Pinboard with Lavender Index Cards
+   ========================================================================== */
+
+.board-territory[data-territory="phase-4"] {
+  background: #100A1F;
+  color: #FAF5FF;
+  font-family: var(--font-kinetic);
+}
+
+.board-territory[data-territory="phase-4"] .territory-sign {
+  background: #18102E;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #F3E8FF;
+}
+
+.board-territory[data-territory="phase-4"] .sign-phase-tag {
+  color: #C084FC;
   font-family: var(--font-mono);
 }
 
-.world-zone[data-zone="studio-playbook"] .capstone-text {
+.board-territory[data-territory="phase-4"] .sign-progress-fill {
+  background: #A855F7;
+}
+
+.board-territory[data-territory="phase-4"] .sticky-note {
+  background: #1B1233;
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  color: #FAF5FF;
+}
+
+.board-territory[data-territory="phase-4"] .attachment-pin {
+  background: #EC4899;
+}
+
+.board-territory[data-territory="phase-4"] .sticky-type-stamp {
+  color: #C084FC;
+}
+
+.board-territory[data-territory="phase-4"] .sticky-deliverable {
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.board-territory[data-territory="phase-4"] .deliverable-label {
+  color: #C084FC;
+}
+
+.board-territory[data-territory="phase-4"] .sticky-checkbox-btn {
+  border-color: #A855F7;
+  color: #100A1F;
+}
+
+.board-territory[data-territory="phase-4"] .sticky-checkbox-btn.is-checked {
+  background: #A855F7;
+}
+
+/* ==========================================================================
+   TERRITORY 5: THE EDITORIAL ATELIER [data-territory="phase-5"]
+   Surface: Antique Walnut & Ivory Parchment Cards
+   ========================================================================== */
+
+.board-territory[data-territory="phase-5"] {
+  background: #17120E;
+  color: #FBF8F1;
+  font-family: var(--font-serif);
+}
+
+.board-territory[data-territory="phase-5"] .territory-sign {
+  background: #201914;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #FBF8F1;
+}
+
+.board-territory[data-territory="phase-5"] .sign-phase-tag {
+  color: #D4AF37;
+  font-family: var(--font-mono);
+}
+
+.board-territory[data-territory="phase-5"] .sign-progress-fill {
+  background: #D4AF37;
+}
+
+/* Authentic Ivory Parchment Sticky Note (High Contrast) */
+.board-territory[data-territory="phase-5"] .sticky-note {
+  background: #FBF8F1;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: #1C150D;
+}
+
+.board-territory[data-territory="phase-5"] .attachment-clip {
+  background: #D4AF37;
+}
+
+.board-territory[data-territory="phase-5"] .sticky-type-stamp {
+  color: #9A7B1C;
+  font-family: var(--font-mono);
+}
+
+.board-territory[data-territory="phase-5"] .sticky-title {
+  color: #1C150D;
+  font-style: italic;
+}
+
+.board-territory[data-territory="phase-5"] .sticky-author {
+  color: #574431;
+}
+
+.board-territory[data-territory="phase-5"] .sticky-bullets li {
+  color: #2D2316;
+}
+
+.board-territory[data-territory="phase-5"] .sticky-deliverable {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.board-territory[data-territory="phase-5"] .deliverable-label {
+  color: #9A7B1C;
+}
+
+.board-territory[data-territory="phase-5"] .deliverable-desc {
+  color: #1C150D;
+}
+
+.board-territory[data-territory="phase-5"] .sticky-checkbox-btn {
+  border-color: #D4AF37;
+  color: #FBF8F1;
+}
+
+.board-territory[data-territory="phase-5"] .sticky-checkbox-btn.is-checked {
+  background: #D4AF37;
+}
+
+/* ==========================================================================
+   TERRITORY 6: THE TELEMETRY VAULT [data-territory="phase-6"]
+   Surface: Industrial Steel Mainframe with Hazard Orange Notes
+   ========================================================================== */
+
+.board-territory[data-territory="phase-6"] {
+  background: #0D1117;
+  color: #FFF7ED;
+  font-family: var(--font-mono);
+}
+
+.board-territory[data-territory="phase-6"] .territory-sign {
+  background: #141A24;
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  color: #FFF7ED;
+}
+
+.board-territory[data-territory="phase-6"] .sign-phase-tag {
+  color: #F97316;
+}
+
+.board-territory[data-territory="phase-6"] .sign-progress-fill {
+  background: #F97316;
+}
+
+.board-territory[data-territory="phase-6"] .sticky-note {
+  background: #141C26;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  color: #FFF7ED;
+}
+
+.board-territory[data-territory="phase-6"] .attachment-pin {
+  background: #F97316;
+}
+
+.board-territory[data-territory="phase-6"] .sticky-type-stamp {
+  color: #F97316;
+}
+
+.board-territory[data-territory="phase-6"] .sticky-deliverable {
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+}
+
+.board-territory[data-territory="phase-6"] .deliverable-label {
+  color: #F97316;
+}
+
+.board-territory[data-territory="phase-6"] .sticky-checkbox-btn {
+  border-color: #F97316;
+  color: #0D1117;
+}
+
+.board-territory[data-territory="phase-6"] .sticky-checkbox-btn.is-checked {
+  background: #F97316;
+}
+
+/* ==========================================================================
+   TERRITORY 7: THE DEAL ROOM [data-territory="marketing-sales"]
+   Surface: Banker's Green Felt Table with Crisp Ledger Notes
+   ========================================================================== */
+
+.board-territory[data-territory="marketing-sales"] {
+  background: #061811;
+  color: #FEF9C3;
+  font-family: var(--font-geist);
+}
+
+.board-territory[data-territory="marketing-sales"] .territory-sign {
+  background: #0A241A;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  color: #FEF9C3;
+}
+
+.board-territory[data-territory="marketing-sales"] .sign-phase-tag {
+  color: #EAB308;
+  font-family: var(--font-mono);
+}
+
+.board-territory[data-territory="marketing-sales"] .sign-progress-fill {
+  background: #EAB308;
+}
+
+/* Crisp Banker's Ledger Note */
+.board-territory[data-territory="marketing-sales"] .sticky-note {
+  background: #FCFBF4;
+  border: 1px solid rgba(202, 138, 4, 0.45);
+  color: #052014;
+}
+
+.board-territory[data-territory="marketing-sales"] .attachment-clip {
+  background: #CA8A04;
+}
+
+.board-territory[data-territory="marketing-sales"] .sticky-type-stamp {
+  color: #A16207;
+  font-family: var(--font-mono);
+}
+
+.board-territory[data-territory="marketing-sales"] .sticky-title {
+  color: #052014;
+  font-family: var(--font-serif);
+}
+
+.board-territory[data-territory="marketing-sales"] .sticky-author {
+  color: #2F4E3F;
+}
+
+.board-territory[data-territory="marketing-sales"] .sticky-bullets li {
+  color: #123023;
+}
+
+.board-territory[data-territory="marketing-sales"] .sticky-deliverable {
+  background: rgba(202, 138, 4, 0.12);
+  border: 1px solid rgba(202, 138, 4, 0.3);
+}
+
+.board-territory[data-territory="marketing-sales"] .deliverable-label {
+  color: #A16207;
+}
+
+.board-territory[data-territory="marketing-sales"] .deliverable-desc {
+  color: #052014;
+}
+
+.board-territory[data-territory="marketing-sales"] .sticky-checkbox-btn {
+  border-color: #CA8A04;
+  color: #FCFBF4;
+}
+
+.board-territory[data-territory="marketing-sales"] .sticky-checkbox-btn.is-checked {
+  background: #CA8A04;
+}
+
+/* ==========================================================================
+   TERRITORY 8: STUDIO COMMAND [data-territory="studio-playbook"]
+   Surface: Mission Control Glassboard with Cyan Acrylic Memos
+   ========================================================================== */
+
+.board-territory[data-territory="studio-playbook"] {
+  background: #080C16;
+  color: #ECFEFF;
+  font-family: var(--font-geist);
+}
+
+.board-territory[data-territory="studio-playbook"] .territory-sign {
+  background: #0D1627;
+  border: 1px solid rgba(6, 182, 212, 0.4);
   color: #ECFEFF;
 }
 
-.world-zone[data-zone="studio-playbook"] .landmark-bottom {
-  border-color: rgba(6, 182, 212, 0.2);
+.board-territory[data-territory="studio-playbook"] .sign-phase-tag {
+  color: #06B6D4;
+  font-family: var(--font-mono);
 }
 
-.world-zone[data-zone="studio-playbook"] .landmark-progress-fill {
+.board-territory[data-territory="studio-playbook"] .sign-progress-fill {
   background: #06B6D4;
 }
 
-.world-zone[data-zone="studio-playbook"] .module-station {
-  background: #080D18;
-  border-color: rgba(6, 182, 212, 0.22);
-}
-
-.world-zone[data-zone="studio-playbook"] .module-station-header {
-  background: #0D1525;
-  border-color: rgba(6, 182, 212, 0.18);
-}
-
-.world-zone[data-zone="studio-playbook"] .module-station-title {
-  color: #FFFFFF;
-}
-
-.world-zone[data-zone="studio-playbook"] .lesson-card {
-  background: #0B1322;
-  border-color: rgba(6, 182, 212, 0.16);
-  color: #ECFEFF;
-}
-
-.world-zone[data-zone="studio-playbook"] .lesson-card:hover {
-  border-color: rgba(6, 182, 212, 0.45);
-  background: #111D32;
-}
-
-/* Zone 8 Checkbox: Executive diamond-pin checkbox */
-.world-zone[data-zone="studio-playbook"] .checkbox-btn {
-  background: #060911;
+.board-territory[data-territory="studio-playbook"] .sticky-note {
+  background: #0D192C;
   border: 1px solid rgba(6, 182, 212, 0.45);
-  color: #06B6D4;
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.15s, border-color 0.15s;
+  color: #ECFEFF;
 }
 
-.world-zone[data-zone="studio-playbook"] .checkbox-btn.is-checked {
+.board-territory[data-territory="studio-playbook"] .attachment-pin {
   background: #06B6D4;
+}
+
+.board-territory[data-territory="studio-playbook"] .sticky-type-stamp {
+  color: #06B6D4;
+}
+
+.board-territory[data-territory="studio-playbook"] .sticky-deliverable {
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+}
+
+.board-territory[data-territory="studio-playbook"] .deliverable-label {
+  color: #06B6D4;
+}
+
+.board-territory[data-territory="studio-playbook"] .sticky-checkbox-btn {
   border-color: #06B6D4;
-  color: #060911;
+  color: #080C16;
+}
+
+.board-territory[data-territory="studio-playbook"] .sticky-checkbox-btn.is-checked {
+  background: #06B6D4;
 }
 
 /* ==========================================================================
@@ -1956,7 +1625,7 @@ html.light .filter-chip.active {
   will-change: transform;
 }
 
-/* Mini-Map Lens (Viewport Rect) */
+/* Mini-Map Lens */
 .minimap-lens {
   position: absolute;
   top: 0;
@@ -1978,15 +1647,8 @@ html.light .filter-chip.active {
   height: 100%;
 }
 
-/* ==========================================================================
-   RESPONSIVE ADJUSTMENTS
-   ========================================================================== */
-
 @media (max-width: 900px) {
   .hud-center {
     display: none;
-  }
-  .module-station {
-    width: 320px;
   }
 }
