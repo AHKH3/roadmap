@@ -6,7 +6,7 @@
   <title>Roadmap: Marketing Websites Freelancer</title>
   <meta
     name="description"
-    content="One service: fast, premium marketing websites for local businesses — clinics, restaurants, gyms, shops — with local SEO, a WhatsApp button, and a booking form."
+    content="One service: fast, premium marketing websites for local businesses with local SEO, a WhatsApp button, and a booking form."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,67 +15,90 @@
 
   <link rel="stylesheet" href="styles/main.css" />
 </head>
-<body>
+<body data-stage="phase-0-1">
+  <!-- Top 2px Global Progress Line -->
   <div class="top-progress-line" aria-hidden="true">
     <div id="top-progress-fill" class="top-progress-fill"></div>
   </div>
 
-  <div class="page-container">
+  <div class="page-shell">
+    <!-- System Header -->
     <header class="system-header">
-      <div class="header-left">
+      <div class="header-brand-block">
         <span class="brand-code">AHKH STUDIO</span>
-        <nav class="header-nav" aria-label="Sections">
-          <a href="#overview">Overview</a>
-          <a href="#phases">Core Path</a>
-          <a href="#marketing-track">Marketing &amp; Sales</a>
-          <a href="#studio-scope">Services &amp; Scope</a>
-        </nav>
+        <span class="header-divider" aria-hidden="true">·</span>
+        <div id="live-chronos" class="chronos-pill" title="Roadmap Live Anchor">
+          <span class="chronos-dot"></span>
+          <span id="chronos-date">Tue, 20 Oct 2026</span>
+          <span class="chronos-sep" aria-hidden="true">·</span>
+          <span class="chronos-cadence" id="chronos-cadence">Evening Focus</span>
+        </div>
       </div>
 
-      <div class="header-controls">
-        <span id="global-stat-readout" class="stat-readout"><strong>0</strong> / 0 completed</span>
-        <button type="button" id="btn-focus" class="control-btn" aria-pressed="false">Focus: Current Phase</button>
-        <button type="button" id="btn-expand" class="control-btn" aria-pressed="false">Expand Modules</button>
-        <button type="button" id="btn-theme" class="control-btn">Light / Dark</button>
+      <div class="header-actions">
+        <div class="global-metric-pill" title="Total Roadmap Completion">
+          <span class="metric-label">Completed</span>
+          <span id="global-stat-readout" class="metric-value"><strong>0</strong> / 394</span>
+          <span id="global-stat-percent" class="metric-percent">(0%)</span>
+        </div>
+
+        <button type="button" id="btn-milestones-drawer" class="control-btn" aria-expanded="false" title="Toggle Milestones & Foundation Strategy">
+          Milestones (0/6)
+        </button>
+
+        <button type="button" id="btn-theme" class="control-btn" title="Toggle Light / Dark Theme">
+          Theme
+        </button>
       </div>
     </header>
 
-    <main>
-      <section class="masthead">
-        <h1 id="masthead-title" class="masthead-title">Roadmap: Marketing Websites Freelancer</h1>
-        <p id="masthead-lead" class="masthead-lead">
-          One service: fast, premium marketing websites for local businesses — clinics, restaurants, gyms, shops — with local SEO, a WhatsApp button, and a booking form.
-        </p>
+    <!-- Linear Stage Stepper Rail (Horizontal Stage Progression) -->
+    <nav class="linear-rail-container" aria-label="Roadmap Stages">
+      <div class="rail-header">
+        <span class="rail-title">Linear Progression Track</span>
+        <span class="rail-tip">Navigate with arrow keys or click to switch phase focus</span>
+      </div>
+      <div id="linear-stage-rail" class="linear-stage-rail">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </nav>
 
-        <blockquote class="pullout-axiom">
-          <p id="masthead-rule">“The rule: don’t start a new course before publishing the previous phase’s project.”</p>
-          <footer id="masthead-focus">Current focus — Phase 0 &amp; 1: Web — everything else stays hidden until its turn.</footer>
-        </blockquote>
-      </section>
-
-      <nav id="path-strip" class="path-strip" aria-label="Phase progression"></nav>
-
-      <section id="overview" class="overview-grid">
-        <div>
-          <h2 class="block-heading">
-            Milestones
-            <span id="milestones-count">0 / 6</span>
-          </h2>
-          <div id="milestones-list"></div>
+    <!-- Collapsible Milestones & Foundation Panel -->
+    <section id="milestones-panel" class="milestones-drawer" hidden>
+      <div class="drawer-inner">
+        <div class="drawer-column">
+          <div class="drawer-header">
+            <h2 class="drawer-title">Core Milestones</h2>
+            <span id="drawer-milestones-count" class="drawer-badge">0 / 6 Completed</span>
+          </div>
+          <div id="milestones-list" class="milestones-list"></div>
         </div>
-
-        <div>
-          <h2 class="block-heading">Foundation</h2>
+        <div class="drawer-column">
+          <div class="drawer-header">
+            <h2 class="drawer-title">Foundational Strategy</h2>
+            <span class="drawer-badge">Axioms</span>
+          </div>
           <div id="principles-list" class="principles-list"></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="phases" class="phases-stack"></section>
-
-      <section id="marketing-track" class="major-section"></section>
-
-      <section id="studio-scope" class="major-section"></section>
+    <!-- Deep Stage Focus Arena (The Active Immersion Area) -->
+    <main id="stage-focus-arena" class="stage-focus-arena">
+      <!-- Dynamic Stage Hero, Filter Bar, Courses, Modules, Lessons, Drills, Capstone, and Traversal Footer -->
     </main>
+
+    <!-- System Footer -->
+    <footer class="system-footer">
+      <div class="footer-left">
+        <span class="footer-title">Roadmap: Marketing Websites Freelancer</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-note">Single service · Zero AI shortcuts in fundamentals · Local-first</span>
+      </div>
+      <div class="footer-right">
+        <button type="button" id="btn-reset-data" class="footer-link-btn">Reset Stored Progress</button>
+      </div>
+    </footer>
   </div>
 
   <script src="data/roadmap-data.js"></script>
