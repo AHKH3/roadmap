@@ -52,7 +52,7 @@
             type="search"
             id="roadmap-search-input"
             class="search-input"
-            placeholder="Search 394 lessons, drills, deliverables..."
+            placeholder="Search core curricula, books, capstones..."
             autocomplete="off"
             spellcheck="false"
           />
@@ -61,10 +61,10 @@
 
         <div class="filter-group" role="radiogroup" aria-label="Completion Filter">
           <button type="button" class="filter-chip active" data-filter="all" aria-checked="true">
-            All <span id="count-filter-all">(394)</span>
+            All <span id="count-filter-all">(42)</span>
           </button>
           <button type="button" class="filter-chip" data-filter="incomplete" aria-checked="false">
-            Incomplete <span id="count-filter-incomplete">(394)</span>
+            Incomplete <span id="count-filter-incomplete">(42)</span>
           </button>
           <button type="button" class="filter-chip" data-filter="completed" aria-checked="false">
             Done <span id="count-filter-completed">(0)</span>
@@ -76,7 +76,7 @@
       <div class="hud-right">
         <div class="global-metric-pill" title="Total Roadmap Completed">
           <span class="metric-label">Completed</span>
-          <span id="global-stat-readout" class="metric-value"><strong>0</strong> / 394</span>
+          <span id="global-stat-readout" class="metric-value"><strong>0</strong> / 42</span>
           <span id="global-stat-percent" class="metric-percent">(0%)</span>
         </div>
 
@@ -91,7 +91,7 @@
         </button>
 
         <button type="button" id="btn-milestones-drawer" class="hud-btn" aria-expanded="false" title="Milestones & Foundational Strategy">
-          Milestones <span id="header-milestones-badge">(0/6)</span>
+          Milestones <span id="header-milestones-badge">(6)</span>
         </button>
 
         <button type="button" id="btn-theme" class="hud-btn" title="Toggle Light / Dark Mode">
@@ -105,15 +105,15 @@
       <div class="drawer-inner">
         <div class="drawer-column">
           <div class="drawer-header">
-            <h2 class="drawer-title">Core Milestones</h2>
-            <span id="drawer-milestones-count" class="drawer-badge">0 / 6 Completed</span>
+            <h2 class="drawer-title">Core Trajectory Milestones</h2>
+            <span id="drawer-milestones-count" class="drawer-badge">Core Targets</span>
           </div>
           <div id="milestones-list" class="milestones-list"></div>
         </div>
         <div class="drawer-column">
           <div class="drawer-header">
             <h2 class="drawer-title">Foundational Strategy</h2>
-            <span class="drawer-badge">Axioms</span>
+            <span class="drawer-badge">Operating Axioms</span>
           </div>
           <div id="principles-list" class="principles-list"></div>
         </div>
@@ -129,7 +129,7 @@
           <path id="world-spine-active" class="world-spine-active" />
         </svg>
 
-        <!-- World Zones & Transition Gates will be rendered dynamically by app.js -->
+        <!-- World Zones & Transition Gates dynamically rendered by app.js -->
         <div id="world-strip" class="world-strip"></div>
       </div>
     </div>

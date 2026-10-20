@@ -839,8 +839,24 @@ html.light .filter-chip.active {
   height: 100%;
 }
 
-/* Module Station (The vertical column card for lessons) */
-.module-station {
+/* Zone Landmark Visual Artwork Container */
+.zone-visual-box {
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.zone-artwork-svg {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  display: block;
+}
+
+/* Module Station & Pillar Card (The Core Milestone Station) */
+.module-station, .pillar-card {
   width: 380px;
   flex-shrink: 0;
   display: flex;
@@ -851,6 +867,20 @@ html.light .filter-chip.active {
   box-sizing: border-box;
   overflow: hidden;
   border: 1px solid;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s, opacity 0.15s;
+}
+
+.pillar-card:hover {
+  transform: translateY(-2px);
+}
+
+.pillar-card.is-completed {
+  opacity: 0.82;
+}
+
+.pillar-card.is-completed:hover {
+  opacity: 1;
 }
 
 .module-station-header {
@@ -877,102 +907,100 @@ html.light .filter-chip.active {
   line-height: 1.3;
 }
 
-.module-station-progress-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.6875rem;
-  margin-top: 0.25rem;
-}
-
-/* Lesson Items Scroll Area */
 .module-lessons-scroll {
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   box-sizing: border-box;
 }
 
-.lesson-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.625rem 0.75rem;
-  border-radius: 4px;
-  border: 1px solid;
-  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
-  cursor: pointer;
-  position: relative;
-}
-
-.lesson-card.matched-highlight {
-  animation: pulseHighlight 1.5s infinite alternate;
-}
-
-@keyframes pulseHighlight {
-  from { box-shadow: 0 0 0 1px #38BDF8; }
-  to { box-shadow: 0 0 12px rgba(56, 189, 248, 0.5); }
-}
-
-.lesson-card.is-completed {
-  opacity: 0.72;
-}
-
-.lesson-card.is-completed:hover {
-  opacity: 1;
-}
-
-.lesson-content {
-  flex: 1;
+.pillar-highlights-box {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  min-width: 0;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.lesson-title {
-  font-size: 0.8125rem;
-  line-height: 1.4;
-  word-break: break-word;
-}
-
-.lesson-card.is-completed .lesson-title {
-  text-decoration: line-through;
+.highlights-heading {
+  font-size: 0.6875rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: var(--hud-text-faint);
 }
 
-.lesson-meta-chips {
+.pillar-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.375rem;
-  margin-top: 0.125rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.meta-chip {
+.pillar-bullet-list li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--hud-text-secondary);
+}
+
+.pillar-bullet-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0.2rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--hud-text-faint);
+}
+
+.pillar-deliverable-badge {
+  padding: 0.625rem 0.875rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.deliverable-tag {
   font-size: 0.625rem;
-  padding: 0.1rem 0.375rem;
-  border-radius: 3px;
-  white-space: nowrap;
-}
-
-.drill-chip {
-  background: rgba(245, 158, 11, 0.12);
-  color: #F59E0B;
-}
-
-.deliverable-chip {
-  background: rgba(16, 185, 129, 0.12);
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: #10B981;
 }
 
-.notes-chip {
-  background: rgba(255, 255, 255, 0.06);
+.deliverable-title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--hud-text-primary);
+  line-height: 1.4;
+}
+
+.pillar-action-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+}
+
+.action-label {
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--hud-text-secondary);
+}
+
+.pillar-card.is-completed .action-label {
+  color: #10B981;
 }
 
 /* ==========================================================================
