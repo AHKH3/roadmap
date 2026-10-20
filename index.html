@@ -1,337 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roadmap: Marketing Websites Freelancer — AHKH Studio</title>
+  <title>Roadmap: Marketing Websites Freelancer</title>
   <meta
     name="description"
-    content="Interactive Freelancer & Design Engineer Roadmap for Fast, Premium Local Business Marketing Websites — with literal course/book breakdowns & localStorage tracking."
+    content="One service: fast, premium marketing websites for local businesses — clinics, restaurants, gyms, shops — with local SEO, a WhatsApp button, and a booking form."
   />
 
-  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono, IBM Plex Sans Arabic -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" /> <!-- impeccable-disable-line overused-font -- Sanctuary Editorial system font stack -->
 
   <link rel="stylesheet" href="styles/main.css" />
 </head>
-<body data-lang="bilingual">
-  <!-- ========================================================================
-       AMBIENT 21st.dev COSMOS BACKGROUND
-       ======================================================================== -->
-  <div class="ambient-canvas" aria-hidden="true">
-    <div class="ambient-grid"></div>
-    <div class="ambient-dots"></div>
-    <div class="aurora-orb aurora-orb--1"></div>
-    <div class="aurora-orb aurora-orb--2"></div>
-    <div class="aurora-orb aurora-orb--3"></div>
+<body>
+  <div class="top-progress-line" aria-hidden="true">
+    <div id="top-progress-fill" class="top-progress-fill"></div>
   </div>
 
-  <!-- ========================================================================
-       STICKY COMMAND HUD BAR
-       ======================================================================== -->
-  <header class="top-hud">
-    <div class="top-hud__inner">
-      <a href="#top" class="brand-cluster">
-        <span class="brand-mark">AH</span>
-        <div class="brand-text">
-          <span class="brand-title">Marketing Websites Roadmap</span>
-          <span class="brand-sub">AHKH Studio · Local-First Tracker</span>
-        </div>
-      </a>
-
-      <nav class="hud-nav" aria-label="Roadmap Sections">
-        <a href="#milestones" class="hud-nav__link">Milestones</a>
-        <a href="#bento-strategy" class="hud-nav__link">Strategy</a>
-        <a href="#core-roadmap" class="hud-nav__link">Core Path (0–6)</a>
-        <a href="#marketing-track" class="hud-nav__link">Marketing Track</a>
-        <a href="#studio-playbook" class="hud-nav__link">AHKH Studio</a>
-      </nav>
-
-      <div class="hud-controls">
-        <!-- Live Global Progress Pill -->
-        <div class="hud-progress-pill" title="Saved automatically in your browser localStorage">
-          <svg class="progress-ring-svg" viewBox="0 0 24 24">
-            <circle class="progress-ring-bg" cx="12" cy="12" r="9"></circle>
-            <circle id="global-progress-ring" class="progress-ring-fill" cx="12" cy="12" r="9" stroke-dasharray="56.5" stroke-dashoffset="56.5"></circle>
-          </svg>
-          <strong id="global-pct-text">0%</strong>
-          <span id="global-count-text" style="opacity:0.75;">0/0</span>
-        </div>
-
-        <!-- Search Command Palette -->
-        <button type="button" id="btn-open-search" class="hud-btn" title="Search all courses, modules, and lessons">
-          <span>🔍 Search</span>
-          <span class="kbd-badge">Ctrl K</span>
-        </button>
-
-        <!-- Focus Mode Toggle -->
-        <button type="button" id="btn-focus-mode" class="hud-btn" title="Toggle between Focus Mode (Current Phase Only) and Full Explorer Mode">
-          <span>🎯</span>
-          <span class="focus-btn-label">Explorer Mode: ALL</span>
-        </button>
-
-        <!-- Expand/Collapse All Modules -->
-        <button type="button" id="btn-expand-all" class="hud-btn" title="Expand or collapse all course curricula">
-          <span>📂 Toggle All Modules</span>
-        </button>
-
-        <!-- Language Switcher -->
-        <button type="button" id="btn-lang-mode" class="hud-btn" title="Switch language view (Bilingual / Arabic / English)">
-          EN + عربي
-        </button>
-
-        <!-- Export / Import Backup -->
-        <button type="button" id="btn-export-json" class="hud-btn" title="Export progress backup as JSON">
-          ⬇ Backup
-        </button>
-        <button type="button" id="btn-import-json" class="hud-btn" title="Restore progress from JSON file">
-          ⬆ Restore
-        </button>
-        <input type="file" id="input-import-json" accept="application/json" style="display:none;" />
-      </div>
-    </div>
-  </header>
-
-  <!-- ========================================================================
-       MAIN PAGE CONTENT
-       ======================================================================== -->
-  <main id="top" class="main-container">
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-      <div class="hero-eyebrow">
-        <span class="pulse-dot"></span>
-        <span>CURRENT FOCUS: PHASE 0 &amp; 1 (WEB) · LOCAL STORAGE ENABLED</span>
+  <div class="page-container">
+    <header class="system-header">
+      <div class="header-left">
+        <span class="brand-code">AHKH STUDIO</span>
+        <nav class="header-nav" aria-label="Sections">
+          <a href="#overview">Overview</a>
+          <a href="#phases">Core Path</a>
+          <a href="#marketing-track">Marketing &amp; Sales</a>
+          <a href="#studio-scope">Services &amp; Scope</a>
+        </nav>
       </div>
 
-      <h1 class="hero-title en-only">Marketing Websites Freelancer</h1>
-      <div class="hero-title-ar ar-text">خارطة الطريق: مستقل المواقع التسويقية للشركات المحلية</div>
-
-      <p class="hero-tagline en-only">
-        One service: fast, premium marketing websites for local businesses —
-        <strong style="color:#fff;">clinics, restaurants, gyms, shops</strong> — with local SEO, a WhatsApp button, and a booking form.
-      </p>
-      <p class="hero-tagline-ar ar-text">
-        خدمة واحدة مركّزة: مواقع تسويقية سريعة وفاخرة للأعمال المحلية (العيادات، المطاعم، الجيم، المحلات) مع تهيئة السيو المحلي، زر واتساب مباشر، ونموذج حجز.
-      </p>
-
-      <!-- GOLDEN RULE BANNER -->
-      <div class="golden-rule-banner spotlight-card">
-        <div class="golden-rule-banner__left">
-          <div class="golden-rule-icon">⚡</div>
-          <div class="golden-rule-text">
-            <h3 class="en-only">The Golden Rule: Don’t start a new course before publishing the previous phase’s project.</h3>
-            <p class="ar-text" style="font-family:var(--font-ar); direction:rtl; font-size:0.95rem; font-weight:700; color:#6ee7b7;">
-              القاعدة الذهبية: لا تبدأ أي كورس جديد قبل نشر مشروع المرحلة السابقة فعلياً على الإنترنت.
-            </p>
-            <p class="en-only" style="margin-top:4px; opacity:0.85;">
-              Current focus: Phase 0 &amp; 1: Web — everything else stays hidden until its turn (use the 🎯 Focus Mode button in the top bar anytime).
-            </p>
-          </div>
-        </div>
-        <a href="#phase-0-1" class="expand-curriculum-btn" style="text-decoration:none; padding:10px 18px; font-size:0.85rem;">
-          <span>Jump to Phase 0 &amp; 1</span>
-        </a>
+      <div class="header-controls">
+        <span id="global-stat-readout" class="stat-readout"><strong>0</strong> / 0 completed</span>
+        <button type="button" id="btn-focus" class="control-btn" aria-pressed="false">Focus: Current Phase</button>
+        <button type="button" id="btn-expand" class="control-btn" aria-pressed="false">Expand Modules</button>
+        <button type="button" id="btn-theme" class="control-btn">Light / Dark</button>
       </div>
+    </header>
 
-      <!-- INTERACTIVE 6-PHASE PIPELINE -->
-      <div id="path-pipeline-container" class="path-pipeline"></div>
-    </section>
+    <main>
+      <section class="masthead">
+        <h1 id="masthead-title" class="masthead-title">Roadmap: Marketing Websites Freelancer</h1>
+        <p id="masthead-lead" class="masthead-lead">
+          One service: fast, premium marketing websites for local businesses — clinics, restaurants, gyms, shops — with local SEO, a WhatsApp button, and a booking form.
+        </p>
 
-    <!-- ======================================================================
-         SECTION 1: MILESTONES (6 MAJOR CHECKPOINTS)
-         ====================================================================== -->
-    <section id="milestones" class="milestones-section">
-      <div class="section-header">
+        <blockquote class="pullout-axiom">
+          <p id="masthead-rule">“The rule: don’t start a new course before publishing the previous phase’s project.”</p>
+          <footer id="masthead-focus">Current focus — Phase 0 &amp; 1: Web — everything else stays hidden until its turn.</footer>
+        </blockquote>
+      </section>
+
+      <nav id="path-strip" class="path-strip" aria-label="Phase progression"></nav>
+
+      <section id="overview" class="overview-grid">
         <div>
-          <div class="section-eyebrow">01 // KEY CHECKPOINTS</div>
-          <h2 class="section-title en-only">The 6 Core Milestones</h2>
-          <div class="section-title-ar ar-text">المحطات الست الكبرى على طول الطريق (اضغط لتعليم ما أنجزته)</div>
+          <h2 class="block-heading">
+            Milestones
+            <span id="milestones-count">0 / 6</span>
+          </h2>
+          <div id="milestones-list"></div>
         </div>
-        <span id="milestones-counter-badge" class="badge-pill badge-pill--current">0 / 6 Achieved</span>
-      </div>
 
-      <div id="milestones-grid-container" class="milestones-grid"></div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 2: STRATEGY BENTO GRID (THE IDEA, EDGE, AI, LONG-TERM, LATER)
-         ====================================================================== -->
-    <section id="bento-strategy" class="bento-section">
-      <div class="section-header">
         <div>
-          <div class="section-eyebrow">02 // OPERATING SYSTEM &amp; PHILOSOPHY</div>
-          <h2 class="section-title en-only">Strategy, Edge &amp; Focus Guardrails</h2>
-          <div class="section-title-ar ar-text">الفلسفة، الميزة التنافسية، دور الذكاء الاصطناعي، وما هو مؤجل</div>
+          <h2 class="block-heading">Foundation</h2>
+          <div id="principles-list" class="principles-list"></div>
         </div>
-      </div>
+      </section>
 
-      <div id="bento-grid-container" class="bento-grid"></div>
-    </section>
+      <section id="phases" class="phases-stack"></section>
 
-    <!-- ======================================================================
-         SECTION 3: CORE TECHNICAL & DESIGN TIMELINE (PHASES 0-1 TO AFTER MONTH 6)
-         ====================================================================== -->
-    <section id="core-roadmap">
-      <div class="section-header">
-        <div>
-          <div class="section-eyebrow">03 // LITERAL CURRICULUM BREAKDOWN (COURSES → MODULES → LESSONS)</div>
-          <h2 class="section-title en-only">The Core Execution Path (Phases 0–6+)</h2>
-          <div class="section-title-ar ar-text">المسار التنفيذي بالتفصيل الحرفي لكل كورس وكتاب ووحدة ودرس</div>
-        </div>
-      </div>
+      <section id="marketing-track" class="major-section"></section>
 
-      <div class="timeline-wrapper">
-        <div class="timeline-beam" aria-hidden="true">
-          <div id="timeline-beam-fill" class="timeline-beam__fill" style="height: 12%;"></div>
-        </div>
-        <div id="core-timeline-container"></div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 4: PARALLEL TRACK — MARKETING & SALES (6 STAGES)
-         ====================================================================== -->
-    <section id="marketing-track" class="track-section">
-      <div class="section-header">
-        <div>
-          <div class="section-eyebrow">04 // FULL PARALLEL TRACK</div>
-          <h2 class="section-title en-only">Track: Marketing &amp; Sales (Stages 1–6)</h2>
-          <div class="section-title-ar ar-text">المسار الموازي الكامل: التسويق والمبيعات (6 مراحل متكاملة بالكتب والكورسات)</div>
-        </div>
-        <span id="marketing-track-badge" class="badge-pill badge-pill--current">0 / 0 Completed</span>
-      </div>
-
-      <!-- WHY / WHEN / METHOD BANNER -->
-      <div class="track-banner spotlight-card">
-        <div class="track-meta-item">
-          <h4>💡 Why This Track Exists</h4>
-          <p class="en-only">Marketing websites only sell if I understand marketing and sales as well as code and design. This is a full track, not tips.</p>
-          <p class="ar-text" style="font-family:var(--font-ar); color:var(--text-muted); font-size:0.86rem; margin-top:4px; direction:rtl;">
-            المواقع التسويقية لا تبيع إلا إذا فهمت التسويق والمبيعات بعمق الكود والتصميم. هذا مسار كامل وليس مجرد نصائح.
-          </p>
-        </div>
-        <div class="track-meta-item">
-          <h4>⏱️ When It Runs</h4>
-          <p class="en-only">Starts after HTML/CSS is solid, then runs alongside Design.</p>
-          <p class="ar-text" style="font-family:var(--font-ar); color:var(--text-muted); font-size:0.86rem; margin-top:4px; direction:rtl;">
-            يبدأ فور رسوخ أساسيات HTML/CSS، ثم يسير بالتوازي مع مرحلة التصميم (Phase 2).
-          </p>
-        </div>
-        <div class="track-meta-item">
-          <h4>🧠 Study Method</h4>
-          <p class="en-only">Same unit system: Read a part → close it → write from memory → apply it to a real site.</p>
-          <p class="ar-text" style="font-family:var(--font-ar); color:var(--text-muted); font-size:0.86rem; margin-top:4px; direction:rtl;">
-            نفس نظام الوحدات: اقرأ جزءاً ← أغلقه ← اكتب خلاصته من الذاكرة ← طبّقه فوراً على موقع حقيقي.
-          </p>
-        </div>
-      </div>
-
-      <div id="marketing-stages-container" class="stages-grid"></div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 5: AHKH STUDIO — SERVICES, PACKAGES & SCOPE PLAYBOOK
-         ====================================================================== -->
-    <section id="studio-playbook" class="studio-section">
-      <div class="section-header">
-        <div>
-          <div class="section-eyebrow">05 // BUSINESS PLAYBOOK &amp; SCOPE FIREWALL</div>
-          <h2 class="section-title en-only">AHKH Studio: Services, Packages &amp; Scope</h2>
-          <div class="section-title-ar ar-text">دستور استوديو AHKH: الخدمة الأساسية، الباقات، الإضافات، وحدود النطاق</div>
-        </div>
-      </div>
-
-      <!-- Studio Rule Callout -->
-      <div class="golden-rule-banner spotlight-card" style="margin-bottom:28px;">
-        <div class="golden-rule-banner__left">
-          <div class="golden-rule-icon">🏛️</div>
-          <div class="golden-rule-text">
-            <h3 class="en-only">Rule: One core service, add-ons sold separately, and a clear list of what I don’t do. Stay narrow, become the expert.</h3>
-            <p class="ar-text" style="font-family:var(--font-ar); direction:rtl; font-size:0.92rem; color:#a7f3d0;">
-              القاعدة: خدمة أساسية واحدة، إضافات تُباع بشكل منفصل، وقائمة واضحة بما لا أفعله. ابقَ متخصصاً لتصبح الخبير الأول.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Core Service Pillars -->
-      <div class="spotlight-card" style="padding:24px; margin-bottom:28px;">
-        <h3 class="phase-title en-only" style="font-size:1.25rem; margin-bottom:4px;">Core Service Checklist (Every Site Build)</h3>
-        <div class="phase-title-ar ar-text" style="font-size:0.95rem; margin-bottom:14px;">المكونات الخمسة للخدمة الأساسية في كل موقع</div>
-        <div id="studio-pillars-container" class="deliverables-list"></div>
-      </div>
-
-      <!-- 3 Package Tiers -->
-      <h3 class="phase-title en-only" style="font-size:1.3rem;">The 3 Package Tiers</h3>
-      <div class="phase-title-ar ar-text" style="font-size:0.96rem;">باقات الخدمة الثلاث (Basic · Standard · Premium)</div>
-      <div id="studio-packages-container" class="packages-grid"></div>
-
-      <!-- 6 Add-ons Sold Separately -->
-      <h3 class="phase-title en-only" style="font-size:1.3rem; margin-bottom:4px;">Add-ons (Sold Separately)</h3>
-      <div class="phase-title-ar ar-text" style="font-size:0.96rem; margin-bottom:16px;">الإضافات الاختيارية (تُباع بشكل منفصل لزيادة قيمة العقد أو الدخل الشهري)</div>
-      <div id="studio-addons-container" class="addons-grid"></div>
-
-      <!-- Out of Scope + Working Rules -->
-      <div class="studio-bottom-grid">
-        <div class="spotlight-card" style="padding:24px; border-color:rgba(244,63,94,0.3);">
-          <div class="section-eyebrow" style="color:#fb7185;">⛔ ANTI-SCOPE-CREEP SHIELD</div>
-          <h3 class="phase-title en-only" style="font-size:1.25rem;">Strictly Out of Scope (What I Don’t Do)</h3>
-          <div class="phase-title-ar ar-text" style="font-size:0.92rem; color:#fda4af;">خارج نطاق العمل تماماً (اعتذار مهذب أو إحالة لشخص آخر)</div>
-          <ul id="studio-oos-container" class="oos-list"></ul>
-        </div>
-
-        <div class="spotlight-card" style="padding:24px; border-color:rgba(16,185,129,0.3);">
-          <div class="section-eyebrow" style="color:#34d399;">⚖️ CLIENT BOUNDARIES</div>
-          <h3 class="phase-title en-only" style="font-size:1.25rem;">Non-Negotiable Working Rules</h3>
-          <div class="phase-title-ar ar-text" style="font-size:0.92rem;">قواعد العمل والاتفاق قبل بدء أي مشروع</div>
-          <div id="studio-rules-container" class="deliverables-list" style="margin-top:14px;"></div>
-          <div style="margin-top:16px; padding:12px 14px; border-radius:10px; background:rgba(255,255,255,0.04); font-size:0.84rem; color:var(--text-secondary);">
-            <strong>Principle:</strong> A request outside these limits gets a polite no or a referral. Review these limits every 6 months.
-            <div class="ar-text" style="font-family:var(--font-ar); color:var(--text-muted); margin-top:4px; direction:rtl;">
-              المبدأ: أي طلب خارج هذه الحدود يقابل باعتذار مهذب أو إحالة. تُراجع هذه الحدود كل 6 أشهر.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         CODE EDITING GUIDE FOOTER
-         ====================================================================== -->
-    <footer class="spotlight-card" style="padding:22px 28px; text-align:center; border-color:var(--border-subtle);">
-      <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--cyan); margin-bottom:6px;">
-        ⚡ CODE-DRIVEN ARCHITECTURE · LOCALSTORAGE PERSISTENCE
-      </div>
-      <p style="font-size:0.88rem; color:var(--text-secondary);">
-        To edit or add phases, courses, modules, or lessons in the future, simply edit
-        <code style="color:#6ee7b7; background:rgba(16,185,129,0.12); padding:2px 7px; border-radius:5px;">data/roadmap-data.js</code>.
-        Your checked progress stays safely stored in your browser’s <code style="color:#67e8f9;">localStorage</code>.
-      </p>
-    </footer>
-  </main>
-
-  <!-- ========================================================================
-       COMMAND PALETTE / SEARCH MODAL (CTRL+K)
-       ======================================================================== -->
-  <div id="command-modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Search Roadmap">
-    <div class="command-modal">
-      <div class="command-input-wrap">
-        <span>🔍</span>
-        <input
-          type="text"
-          id="command-search-input"
-          class="command-input"
-          placeholder="Search any course, book, module, or lesson (e.g. Flexbox, Refactoring UI, Astro, GSAP, StoryBrand, Hormozi)..."
-        />
-        <span class="kbd-badge">ESC</span>
-      </div>
-      <div id="command-search-results" class="command-results"></div>
-    </div>
+      <section id="studio-scope" class="major-section"></section>
+    </main>
   </div>
 
   <script src="data/roadmap-data.js"></script>
